@@ -290,7 +290,7 @@
 <script>
     async function getListOrderPending() {
         const res= await axios({
-            url: "http://localhost:8000/product/order/pending",
+            url: "http://192.168.43.1:8000/product/order/pending",
             method: "get",
             data: {
                 state_order: 0
@@ -320,7 +320,7 @@
     async function getDetailOrder(id) {
         document.getElementById("popup-detail").style.display= "flex"
         const res= await axios({
-            url: "http://localhost:8000/get_payment",
+            url: "http://192.168.43.1:8000/get_payment",
             method: "get",
             params: {
                 id_payment: id
@@ -360,7 +360,7 @@
 <script>
     async function approveOrder() {
         const res= await axios({
-            url: "http://localhost:8000/approve/order",
+            url: "http://192.168.43.1:8000/approve/order",
             method: "put",
             data: {
                 id_payment: $("#id_order").val()
@@ -375,7 +375,7 @@
 <script>
     async function deleteOrder(id) {
         const res= await axios({
-            url: "http://localhost:8000/order/delete",
+            url: "http://192.168.43.1:8000/order/delete",
             method: "delete",
             data: {
                 id_payment: id

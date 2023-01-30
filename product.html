@@ -464,7 +464,7 @@
                                 let fuse;
                                 async function getProduct() {
                                   const res= await axios({
-                                    url: "http://localhost:8000/list-product",
+                                    url: "http://192.168.43.1:8000/list-product",
                                     method: "get",
                                   })
                                   const result= await res.data
@@ -1160,7 +1160,7 @@
   <script>
     async function getDetailProduct() {
       const res = await axios({
-        url: "http://localhost:8000/product/detail",
+        url: "http://192.168.43.1:8000/product/detail",
         method: "get",
         params: {
           id_product: new URLSearchParams(window.location.search).get(
@@ -1170,11 +1170,11 @@
       });
       const result = await res.data;
       document.getElementById("product-description").innerHTML =
-        result[0].product_description;
+        result[0]?.product_description;
       
       document.getElementById("product-name").innerHTML =
-        result[0].product_name;
-      document.getElementById("img_02").setAttribute("src", result[0].image1);
+        result[0]?.product_name;
+      document.getElementById("img_02").setAttribute("src", result[0]?.image1);
       document.getElementById("amount-product-input").value= result[0]?.amount_product
       document.getElementById("amount-product").innerHTML= result[0]?.amount_product || 0
       if(parseInt(result[0]?.discount) > 0) {
@@ -1201,7 +1201,7 @@
   <script>
     async function relateProduct() {
       const res = await axios({
-        url: "http://localhost:8000/relate_product",
+        url: "http://192.168.43.1:8000/relate_product",
         method: "get",
       });
       const result = await res.data;
@@ -1281,7 +1281,7 @@
         }
         else {
           const res = await axios({
-            url: "http://localhost:8000/add_to_cart",
+            url: "http://192.168.43.1:8000/add_to_cart",
             method: "post",
             data: {
               id_product: new URLSearchParams(window.location.search).get(
@@ -1311,7 +1311,7 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "http://localhost:8000/get_cart",
+          url: "http://192.168.43.1:8000/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1389,7 +1389,7 @@
     async function checkLogin() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "http://localhost:8000/",
+          url: "http://192.168.43.1:8000/",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),

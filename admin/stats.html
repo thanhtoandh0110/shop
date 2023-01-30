@@ -235,7 +235,7 @@
     let arr_stats= []
     async function statsSpecific() {
         const res= await axios({
-            url: "http://localhost:8000/employee/stats",
+            url: "http://192.168.43.1:8000/employee/stats",
             method: "get"
         })
         const result= await res.data

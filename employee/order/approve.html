@@ -284,7 +284,7 @@
 <script>
     async function getListOrderApprove() {
         const res= await axios({
-            url: "http://localhost:8000/product/order/approve",
+            url: "http://192.168.43.1:8000/product/order/approve",
             method: "get",
             data: {
                 state_order: 0
@@ -314,7 +314,7 @@
     async function getDetailOrder(id) {
         document.getElementById("popup-detail").style.display= "flex"
         const res= await axios({
-            url: "http://localhost:8000/get_payment",
+            url: "http://192.168.43.1:8000/get_payment",
             method: "get",
             params: {
                 id_payment: id
@@ -382,7 +382,7 @@
 <script>
     async function deleteOrder(id) {
         const res= await axios({
-            url: "http://localhost:8000/order/delete",
+            url: "http://192.168.43.1:8000/order/delete",
             method: "delete",
             data: {
                 id_payment: id
@@ -402,7 +402,7 @@
 
         if(Cookies.get("uid")) {
             const res= await axios({
-                url: "http://localhost:8000/employee",
+                url: "http://192.168.43.1:8000/employee",
                 method: "get",
                 params: {
                     id: Cookies.get("uid")

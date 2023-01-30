@@ -543,7 +543,7 @@
         })
         async function login() {
             const res= await axios({
-                url: "http://localhost:8000/login",
+                url: "http://192.168.43.1:8000/login",
                 method: "post",
                 data: {
                     email: $("#input-email").val(),
@@ -566,7 +566,7 @@
         async function get_cart() {
             if(Cookies.get("uid")) {
                 const res= await axios({
-                    url: "http://localhost:8000/get_cart",
+                    url: "http://192.168.43.1:8000/get_cart",
                     method: "post",
                     data: {
                         id_user: Cookies.get("uid")
@@ -628,7 +628,7 @@
         $("#submit-form-forgotten").on("click",async function() {
             $(this).html("Chúng tôi đã gửi mật khẩu về email của bạn")
             const res= await axios({
-                url: "http://localhost:8000/forgot-password",
+                url: "http://192.168.43.1:8000/forgot-password",
                 method: "post",
                 data: {
                     email: $("#input-email-forgotten").val()

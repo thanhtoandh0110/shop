@@ -853,7 +853,7 @@
       document.title= "Tìm kiếm - "+ new URLSearchParams(window.location.search).get("query_search")
       async function getProduct() {
         const res= await axios({
-          url: "http://localhost:8000/list-product",
+          url: "http://192.168.43.1:8000/list-product",
           method: "get",
         })
         const result= await res.data

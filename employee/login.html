@@ -295,7 +295,7 @@
           if(Cookies.get("uid")) {
           try {
               const res= await axios({
-                  url: "http://localhost:8000/employee",
+                  url: "http://192.168.43.1:8000/employee",
                   method: "get",
                   params: {
                       id: Cookies.get("uid")
@@ -326,7 +326,7 @@
       async function login() {
         try {
           const res = await axios({
-            url: "http://localhost:8000/employee/login",
+            url: "http://192.168.43.1:8000/employee/login",
             method: "post",
             data: {
               account: $("#account").val(),

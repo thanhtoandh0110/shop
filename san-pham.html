@@ -422,7 +422,7 @@
                                 let fuse;
                                 async function getProduct() {
                                   const res= await axios({
-                                    url: "http://localhost:8000/list-product",
+                                    url: "http://192.168.43.1:8000/list-product",
                                     method: "get",
                                   })
                                   const result= await res.data
@@ -1189,7 +1189,7 @@
     if(! new URLSearchParams(window.location.search).get("categoryId")) {
       const page= new URLSearchParams(window.location.search).get("page") || 1
       const res= await axios({
-        url: "http://localhost:8000/list-product",
+        url: "http://192.168.43.1:8000/list-product",
         method: "get",
       })
       const result= await res.data
@@ -1288,7 +1288,7 @@
   async function checkLogin() {
     if(Cookies.get("uid")) {
       const res= await axios({
-        url: "http://localhost:8000/",
+        url: "http://192.168.43.1:8000/",
         method: "post",
         data: {
           id_user: Cookies.get("uid")
@@ -1908,7 +1908,7 @@
     if(new URLSearchParams(window.location.search).get("categoryId")) {
       const page= new URLSearchParams(window.location.search).get("page") || 1
       const res= await axios({
-        url: "http://localhost:8000/get_product/by/category",
+        url: "http://192.168.43.1:8000/get_product/by/category",
         method: "get",
         params: {
           categoryId: parseInt(new URLSearchParams(window.location.search).get("categoryId"))

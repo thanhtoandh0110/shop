@@ -110,7 +110,7 @@
 <script>
     async function getDashboard() {
         const res= await axios({
-            url: "http://localhost:8000/employee/dashboard",
+            url: "http://192.168.43.1:8000/employee/dashboard",
             method: "get"
         })
         const result= await res.data
@@ -133,7 +133,7 @@
         try {
             if(Cookies.get("uid")) {
             const res= await axios({
-                url: "http://localhost:8000/employee",
+                url: "http://192.168.43.1:8000/employee",
                 method: "get",
                 params: {
                     id: Cookies.get("uid")

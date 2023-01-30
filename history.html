@@ -391,7 +391,7 @@
 <script>
     async function pending() {
         const res= await axios({
-            url: "http://localhost:8000/user/order/pending",
+            url: "http://192.168.43.1:8000/user/order/pending",
             method: "get",
             params: {
                 id_user: Cookies.get("uid")
@@ -425,7 +425,7 @@
     pending()
     async function approved() {
         const res= await axios({
-            url: "http://localhost:8000/user/order/approved",
+            url: "http://192.168.43.1:8000/user/order/approved",
             method: 'get',
         })
         const result= await res.data

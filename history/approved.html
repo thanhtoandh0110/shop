@@ -390,7 +390,7 @@
 <script>
     async function approved() {
         const res= await axios({
-            url: "http://localhost:8000/user/order/approved",
+            url: "http://192.168.43.1:8000/user/order/approved",
             method: 'get',
             params: {
                 id_user: Cookies.get("uid")

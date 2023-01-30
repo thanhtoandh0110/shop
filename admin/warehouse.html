@@ -220,7 +220,7 @@
         let total= 0
         async function getWareHouse() {
             const res= await axios({
-                url: "http://localhost:8000/admin/warehouse/specific",
+                url: "http://192.168.43.1:8000/admin/warehouse/specific",
                 method: "get"
             })
             const result= await res.data
@@ -392,7 +392,7 @@
     
             if(Cookies.get("uid")) {
                 const res= await axios({
-                    url: "http://localhost:8000/admin",
+                    url: "http://192.168.43.1:8000/admin",
                     method: "get",
                     params: {
                         id: Cookies.get("uid")

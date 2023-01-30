@@ -1243,7 +1243,7 @@
     <script>
       async function getBank() {
           const res= await axios({
-              url: "http://localhost:8000/user/bank",
+              url: "http://192.168.43.1:8000/user/bank",
               method: "get",
               params: {
                 id_user: Cookies.get("uid")
@@ -1264,7 +1264,7 @@
     async function get_cart() {
       if (Cookies.get("uid")) {
         const res = await axios({
-          url: "http://localhost:8000/get_cart",
+          url: "http://192.168.43.1:8000/get_cart",
           method: "post",
           data: {
             id_user: Cookies.get("uid"),
@@ -1448,7 +1448,7 @@
 
       let id_payment= uuid.v4()
       const res= await axios({
-        url: "http://localhost:8000/checkout/payment",
+        url: "http://192.168.43.1:8000/checkout/payment",
         method: "post",
         data: {
           username: $("#input-username").val(),
@@ -1466,7 +1466,7 @@
       const arr_promise= []
       // const promisePaymentItem= 
       arr_product.map(item=> arr_promise.push(axios({
-        url: "http://localhost:8000/payment/item/cart",
+        url: "http://192.168.43.1:8000/payment/item/cart",
         method: "post",
         data: {
           id_product: item.id_product,
@@ -1522,7 +1522,7 @@
 <script>
   async function getMomo() {
       const res= await axios({
-          url: "http://localhost:8000/get/momo",
+          url: "http://192.168.43.1:8000/get/momo",
           method: "get",
           params: {
               id_user: Cookies.get("uid")

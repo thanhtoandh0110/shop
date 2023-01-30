@@ -443,7 +443,7 @@
         };
     async function getProduct() {
         const res= await axios({
-            url: "http://localhost:8000/list-product",
+            url: "http://192.168.43.1:8000/list-product",
             method: "get",
         })
         const result= await res.data
@@ -516,7 +516,7 @@
         getCategory()
         document.getElementById("popup-edit").style.display= "flex"
         const res= await axios({
-            url: "http://localhost:8000/get/detail-product",
+            url: "http://192.168.43.1:8000/get/detail-product",
             method: "get",
             params: {
                 id_product: id
@@ -541,13 +541,13 @@
             formData.append("image1", $("#inp-product-image-1")[0].files[0])
             formData.append("image2", $("#inp-product-image-2")[0].files[0])
             const res1= await axios({
-                url: "http://localhost:8000/image/upload",
+                url: "http://192.168.43.1:8000/image/upload",
                 method: "post",
                 data: formData
             })
             const result1= await res1.data
             const res= await axios({
-                url: "http://localhost:8000/product/update",
+                url: "http://192.168.43.1:8000/product/update",
                 method: "patch",
                 data: {
                     id: $("#id-product").val(),
@@ -569,7 +569,7 @@
         }
         else {
             const res= await axios({
-                url: "http://localhost:8000/product/update",
+                url: "http://192.168.43.1:8000/product/update",
                 method: "patch",
                 data: {
                     id: $("#id-product").val(),
@@ -606,13 +606,13 @@
         formData.append("image1", $("#inp-add-product-image-1")[0].files[0])
         formData.append("image2", $("#inp-add-product-image-2")[0].files[0])
         const res1= await axios({
-            url: "http://localhost:8000/image/upload",
+            url: "http://192.168.43.1:8000/image/upload",
             method: "post",
             data: formData
         })
         const result1= await res1.data
         const res= await axios({
-            url: "http://localhost:8000/add/product",
+            url: "http://192.168.43.1:8000/add/product",
             method: "post",
             data: {
                 product_name: $("#inp-add-product-name").val(),
@@ -636,7 +636,7 @@
 <script>
     async function deleteProduct(id) {
         const res= await axios({
-            url: "http://localhost:8000/product/delete",
+            url: "http://192.168.43.1:8000/product/delete",
             method: "delete",
             data: {
                 id_product: id
@@ -656,7 +656,7 @@
 
         if(Cookies.get("uid")) {
             const res= await axios({
-                url: "http://localhost:8000/employee",
+                url: "http://192.168.43.1:8000/employee",
                 method: "get",
                 params: {
                     id: Cookies.get("uid")
@@ -686,7 +686,7 @@
 <script>
     async function getCategory() {
         const res= await axios({
-            url: "http://localhost:8000/category",
+            url: "http://192.168.43.1:8000/category",
             method: "get",
         })
         const result= await res.data

@@ -133,7 +133,7 @@
 
     async function getProduct() {
         const res= await axios({
-            url: "http://localhost:8000/list-product",
+            url: "http://192.168.43.1:8000/list-product",
             method: "get",
         })
         const result= await res.data
@@ -172,7 +172,7 @@
   <script>
     async function checkLogin() {
         const res= await axios({
-            url: "http://localhost:8000/warehouse/check/login",
+            url: "http://192.168.43.1:8000/warehouse/check/login",
             method: "post",
             data: {
                 id_user: Cookies.get("uid") || ""
@@ -205,7 +205,7 @@
         }
         else {
             const res= await axios({
-                url: "http://localhost:8000/warehouse/import",
+                url: "http://192.168.43.1:8000/warehouse/import",
                 method: "post",
                 data: {
                     id_product: document.getElementById("import-id-product").value,
@@ -215,7 +215,7 @@
             })
             const result= await res.data
             swal("Thông báo", "Nhập sản phẩm thành công", "success")
-            .then(()=> axios.post("http://localhost:8000/spend/budget", {budget: parseInt(oldBudget) - parseInt(document.getElementById("input-import-amount-product").value) * parseInt(document.getElementById("import-price-product").value)}))
+            .then(()=> axios.post("http://192.168.43.1:8000/spend/budget", {budget: parseInt(oldBudget) - parseInt(document.getElementById("input-import-amount-product").value) * parseInt(document.getElementById("import-price-product").value)}))
             .then(()=> window.location.reload())
         }
     }
@@ -235,7 +235,7 @@
         }
         else {
             const res= await axios({
-                url: "http://localhost:8000/warehouse/export",
+                url: "http://192.168.43.1:8000/warehouse/export",
                 method: "post",
                 data: {
                     id_product: document.getElementById("export-id-product").value,
@@ -258,7 +258,7 @@
     let oldBudget= 0
     async function getBudget() {
         const res= await axios({
-            url: "http://localhost:8000/get/budget",
+            url: "http://192.168.43.1:8000/get/budget",
             method: "get",
         })
         const result= await res.data

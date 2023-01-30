@@ -420,7 +420,7 @@
 
         if(Cookies.get("uid")) {
             const res= await axios({
-                url: "http://localhost:8000/admin",
+                url: "http://192.168.43.1:8000/admin",
                 method: "get",
                 params: {
                     id: Cookies.get("uid")
@@ -450,7 +450,7 @@
 <script>
     async function getEmployee() {
         const res= await axios({
-            url: "http://localhost:8000/admin/get/employee",
+            url: "http://192.168.43.1:8000/admin/get/employee",
             method: "get"
         })
         const result= await res.data
@@ -475,7 +475,7 @@
     async function detailEmployee(id) {
         document.getElementById("popup-detail").style.display= "flex"     
         const res= await axios({
-            url: "http://localhost:8000/admin/detail-employee",
+            url: "http://192.168.43.1:8000/admin/detail-employee",
             method: "get",
             params: {
                 id: id
@@ -496,7 +496,7 @@
 <script>
     async function updateEmployee() {
         const res= await axios({
-            url: "http://localhost:8000/admin/update/employee",
+            url: "http://192.168.43.1:8000/admin/update/employee",
             method: "put",
             data: {
                 employeeName: $("#inp-employee-name").val(),
@@ -516,7 +516,7 @@
 <script>
     async function deleteUser(id) {
         const res= await axios({
-            url: "http://localhost:8000/admin/delete/employee",
+            url: "http://192.168.43.1:8000/admin/delete/employee",
             method: "delete",
             data: {
                 id: id
@@ -540,7 +540,7 @@
         else {
 
             const res= await axios({
-                url: "http://localhost:8000/add/employee",
+                url: "http://192.168.43.1:8000/add/employee",
                 method: "post",
                 data: {
                     employeeName: $("#inp-add-employee-name").val(),
